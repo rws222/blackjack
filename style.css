@@ -1,0 +1,204 @@
+body {
+  padding: 0;
+  margin: 0;
+  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  color: white;
+  overflow: hidden;
+}
+
+/* --- modal adjustments --- */
+
+.content {
+  text-align: center;
+}
+
+.actions {
+  text-align: center;
+  display: flex;
+  justify-content: center;
+}
+
+
+/* --- end modal --- */
+
+h1 {
+  font-size: 30px;
+  color: white;
+}
+
+h2 {
+  font-size: 40px;
+  color: white;
+}
+
+.background {
+  width:100vw;
+  height:100vh;
+  background: rgb(51,170,65);
+  background: radial-gradient(circle, rgba(51,170,65,1) 0%, rgba(29,97,37,1) 100%);
+  display: flex;
+  flex-direction: column;
+}
+
+.flex-container {
+  display: flex;
+  flex-grow: 1;
+  justify-content: center;
+  align-items: center;
+}
+
+#row_dealer_cards, #row_player_cards {
+  flex-grow: 4;
+}
+
+#row_table_middle {
+  flex-grow: 6;
+  justify-content: left;
+}
+
+#row_table_middle > div {
+  margin-left: 10%;
+}
+
+.card_front, .card_back, .deck_card {
+  text-align: center;
+  width:100px;
+  height:138px;
+  border-style: solid;
+  border-radius: 8px;
+  border-width: 1px;
+  margin: 10px;
+  color: black;
+  background-color: #fff;
+  box-shadow: 0 5px 5px 0 rgba(0,0,0,0,2);
+}
+
+.card_back, .deck_card {
+  background: rgb(226,30,30);
+  background: radial-gradient(circle, rgba(226,30,30,1) 0%, rgba(112,25,25,1) 100%);
+}
+
+#deck {
+  box-shadow: 0 10px 0 0 rgb(0,0,0);
+}
+
+.card_front > img {
+  width: 100%;
+}
+
+.score {
+  position: absolute;
+  right: 10%;
+  text-align: center;
+}
+
+#dealer_score_container {
+  top:15%;
+}
+
+#player_score_container {
+  bottom:15%;
+}
+
+#dealer_score, #player_score {
+  font-size: 36px;
+}
+
+#button-container {
+  position: absolute;
+  bottom: 10vh;
+  left: 5vw;
+}
+
+.game_button {
+  height: 80px;
+  width: 150px;
+  font-size: 30px;
+  margin: 10px;
+  border-style: solid;
+  border-radius: 10px;
+  border-width: 0;
+  color:white;
+  box-shadow: 2px 4px 5px 0 rgba(0,0,0,0.8);
+  outline:none;
+}
+
+.game_button:active {
+  transform: translateY(4px);
+  box-shadow: 1px 2px 5px 0 rgba(0,0,0,0.4);
+}
+
+#stay_button {
+  background: rgb(51,170,65);
+}
+
+#hit_me_button {
+  background: rgb(226,30,30);
+}
+
+#stay_button:hover {
+  background: rgb(42, 139, 53);
+}
+
+#hit_me_button:hover {
+  background: rgb(199, 27, 27);
+}
+
+
+/* --- card flip animation, adapted from w3schools --- */
+
+
+.card-container, .card-container-hidden {
+  height: 158px;
+  width: 120px;
+  perspective: 500px;
+}
+
+.card-container-hidden {
+  opacity: 0;
+}
+
+.card {
+  width: 102px;
+  transform-style: preserve-3d;
+}
+
+.card_flip {
+  -webkit-animation-name: cardflip;
+          animation-name: cardflip;
+  -webkit-animation-duration: 0.5s;
+          animation-duration: 0.5s;
+  -webkit-animation-iteration-count: 1;
+          animation-iteration-count: 1;
+  animation-direction: reverse;
+}
+
+.card_front, .card_back {
+  margin:0;
+  position: absolute;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+}
+
+.card_front {
+  transform: rotateX(0deg);
+}
+
+.card_back {
+  transform: rotateY(180deg);
+}
+
+#deck {
+  -webkit-backface-visibility: visible;
+  backface-visibility: visible;
+}
+
+@-webkit-keyframes cardflip {
+  from {transform: rotateY(0deg);}
+  to {transform: rotateY(180deg);}
+}
+
+@keyframes cardflip {
+  from {transform: rotateY(0deg);}
+  to {transform: rotateY(180deg);}
+}

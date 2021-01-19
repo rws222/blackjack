@@ -10,3 +10,5 @@ cards, and an opponent that operated based on a set of rules given by the profes
 The full web app version can be found in my CS Classwork repository on GitHub, which 
 is also linked to the "Projects" section of my website. The link below goes to a 
 reduced-code, fully functional demo of the game. Enjoy!
+
+Note: This web app was designed for desktop/laptop only. Mobile and tablet views may not be supported. 
